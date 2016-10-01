@@ -1,0 +1,27 @@
+#Count integer permutation. 
+#Example: 121 can be rearranged to 112, 121, 211. return 3. 
+#If input is 1213 return 12. 
+#Input limit is nonnegative.
+def Product(Num):
+    product=1
+    for i in range(Num):
+        product=product*(i+1)
+    return product 
+def Permutation(Num):   
+    Num=str(Num)
+    All=[int(Num[i]) for i in range(len(Num))]
+    Unique=[All[i] for i in range(len(All)) if i == All.index(All[i])]
+    Times=Unique
+    for i in range(len(Unique)):
+        count=0
+        for j in range(len(All)):
+            if Unique[i]==All[j]:
+                count=count+1
+        Times[i]=Product(count)
+    Remove=1
+    for i in range(len(Times)):
+        Remove=Remove*Times[i]
+    Result=Product(len(All))/Remove
+    return Result
+#test
+Result=Permutation(1213)
