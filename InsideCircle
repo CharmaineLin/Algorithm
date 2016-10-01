@@ -1,0 +1,12 @@
+#Draw circle at (0, 0) with radius r. How many points with integer coordinates will fall into the circle? 
+#If r = 1, then point (0, 0), (1, 0), (0, 1), (0, -1), (-1, 0) will. Return 5. 
+#Input limit is that r is [0, 20000].
+def InsideCircle(r):
+    count=0
+    for i in range(-r,r+1):
+        for j in range(-r,r+1):
+            if i*i+j*j<=r:
+                count=count+1
+    return count
+#test
+result=InsideCircle(1)
