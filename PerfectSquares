@@ -11,4 +11,4 @@ def PerfectSquares(a, b):
             j = j+1
         i = i+1
     return count
-Q1=PerfectSquares(4,17)
+Result=PerfectSquares(4,17)
